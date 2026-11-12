@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: .5em;
+  grid-template-rows: auto auto auto 1fr ;
+  min-height: 100vh;
+}
+
+
+body {
+  margin: 0 auto;
+  max-width: 56em;
+  padding: 1em 0;
+  background-image: url(images/wolfblkbg.gif);
+}
+
+footer {
+    height: 10vh;
+    display: flex;
+    background: #eaeaea;
+    text-align: center;
+    justify-content: center;
+
+    border: red 2px solid;
+}
+
+
+/* HEADER STUFF */
+
+header {
+    
+    grid-column: 1;
+    padding: 24px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/stars3.gif);
+    border: 2px solid #cbffb3;
+    box-shadow:  0 0px 2px #FFF, 0 0px 3px #07f49e, 0 0px 8px #30c67c, 0 -0px 10px #0f68a9;;
+    
+}
+
+.maintitle {
+  margin: 0 !important; 
+  line-height: 1;
+  text-align: center;
+  font-family: eurostile-extended, sans-serif;
+  font-size: 5.5rem;
+  color: #cbffb3;
+  text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #07f49e, 0 -10px 20px #30c67c, 0 -18px 40px #0f68a9;
+  filter: drop-shadow(2px 2px .5px black);
+}
+
+.maintitle:hover {
+  color: #deffcf;
+  text-shadow: 0 -1px 7px #FFF, 0 -2px 20px #07f49e, 0 -10px 30px #30c67c, 0 -18px 50px #0f68a9;
+}
+
+nav {
+    grid-column: 1;
+    height: 5vh;
+    display: flex;
+    position: sticky;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    padding: 0 10%;
+    margin: 0;
+    background: linear-gradient(to bottom, #CECECE 0%, #FFFFFF 39%, #5D7475 100%);
+    z-index: 3;
+    box-shadow: 0 4px 6px 2px rgba(0, 0, 0, 0.527);
+
+    border: red 2px solid;
+}
+
+nav ul {
+  grid-column: 1;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0; padding: 0;
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  display: inline-block;
+  transition: all .1s ease;
+  color: #9d4848;
+  font-family: t26-carbon, monospace;
+  font-size: 1.9em;
+  font-weight: bold;
+  background: linear-gradient(0deg, #8c1105, #84162f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: #0000005d .5px;;
+  padding: 0;
+  line-height: .8;
+  
+}
+
+nav ul li a:hover {
+  background: linear-gradient(0deg, rgb(123, 6, 6), rgb(255, 72, 0),rgb(211, 37, 21));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: #000000b0 .3px;
+  filter: drop-shadow(.3px 0.3px .2px #3d3d3d) drop-shadow(.5px .5px .2px #6d4949de) drop-shadow(-0.1px -0.2px .2px #be9494) drop-shadow(-0.1px -0.2px .2px #ffffffb3);
+  transform: scale(1.02);
+  transform-origin: center;
+  
+}
+
+/* FORM */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 10px;
+ 
+    
+    border: rgb(13, 255, 0) 2px solid;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-family: t26-carbon, monospace;
+    font-size: 1.3rem;
+    color: #eaeaea;
+    padding: 0;
+    
+    border: rgb(238, 0, 255) 2px solid;
+}
+
+
+form label {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+
+}
+
+form textarea,
+form input {
+    display: inline-block;
+    width: 100%;
+    height: 5rem;
+}
+
+
+
+form label {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+form button {
+    transition: all .1s ease;
+    width: auto;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #CECECE 0%, #FFFFFF 39%, #5D7475 100%);
+}
+
+form button:hover {
+    background: linear-gradient(to bottom, #626161 0%, #b2b2b2 39%, #9cadae 100%);
+}
+
+form button p {
+  transition: all .1s ease;
+  color: #9d4848;
+  font-family: t26-carbon, monospace;
+  font-size: 1.9em;
+  font-weight: bold;
+  background: linear-gradient(0deg, #8c1105, #84162f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: #0000005d .5px;;
+  padding: 0;
+  line-height: 1;
+}
+
+form button p:hover {
+  background: linear-gradient(0deg, rgb(123, 6, 6), rgb(255, 72, 0),rgb(211, 37, 21));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: #000000b0 .3px;
+  filter: drop-shadow(.3px 0.3px .2px #3d3d3d) drop-shadow(.5px .5px .2px #6d4949de) drop-shadow(-0.1px -0.2px .2px #be9494) drop-shadow(-0.1px -0.2px .2px #ffffffb3);
+  transform-origin: center;
+}
+
+#email {
+    height: 2rem;
+}
+
