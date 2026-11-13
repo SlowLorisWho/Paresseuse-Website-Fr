@@ -45,6 +45,11 @@ header {
     
 }
 
+.maintitle a {
+  text-decoration: none;
+  color: #cbffb3;
+}
+
 .maintitle {
   margin: 0 !important; 
   line-height: 1;
