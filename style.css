@@ -195,14 +195,6 @@ aside{
   
 }
 
-.sidebar-right {
-  background-image: url(images/GRANITE7.jpeg);
-  color: #00aaff;
-  border: red 2px solid;
-  background:linear-gradient(to bottom, #8c1105 0%, #3a0404 100%),  rgba(169, 116, 2, 0.589);
-
-}
-
 .socials {
   display: grid;
   width: 100%;
@@ -269,6 +261,99 @@ aside{
   width: 5.5rem;
   height: auto;
   filter:sepia(.5)
+}
+
+
+/* RIGHT SIDE */
+.sidebar-right {
+  background-image: url(images/GRANITE7.jpeg);
+  color: rgb(255, 102, 0);
+  border: red 2px solid;
+  position: relative;
+  isolation: isolate; 
+
+}
+
+.sidebar-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:linear-gradient(to bottom, #8c1105 0%, #3a0404 100%),  rgba(169, 116, 2, 0.589);
+  background-blend-mode: multiply;
+  
+}
+
+
+.sidebar-right:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("images/0064_small.gif") center/cover;
+  background-size: auto;
+  opacity: 0.5; /* Adjust granite texture opacity (0 to 1) */
+  mix-blend-mode: luminosity;
+  
+}
+
+.dates {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  justify-content: center;
+}
+
+.dates h2 {
+  text-align: center;
+  font-family: t26-carbon, monospace;
+  font-size: 1.4em;
+  border: rgb(255, 102, 0) 1.5px solid;
+  border-radius: 5px;
+  background-color: rgba(227, 162, 10, 0.163);
+  padding: 3px;
+  margin-bottom: 20px;
+  width:min-content;
+  justify-self: center;
+  filter: drop-shadow(0px 0px 4px rgb(255, 136, 0));
+  mix-blend-mode: color-dodge;
+}
+
+
+.dates ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  width: 100%;
+  margin: 0; 
+  padding: 0;
+  text-align: center;
+  mix-blend-mode: hard-light;
+}
+
+.dates ul li {
+  display: inline-block;
+  padding: 0.5rem 0;
+  filter: drop-shadow(0px 0px 4px rgb(255, 136, 0));
+  
+}
+
+.dates ul li a {
+  transition: all .2s ease;
+  display: inline-block;
+
+  text-decoration: none;
+  font-family: t26-carbon, monospace;
+  font-size: 1.4rem;
+  color: rgb(255, 102, 0);
+}
+
+
+.dates ul li a:hover{
+  scale: 1.1;
 }
 
 article {
