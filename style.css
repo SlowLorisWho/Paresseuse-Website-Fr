@@ -384,10 +384,10 @@ article {
 
 .prgph {
   position: relative;
-  isolation: isolate; /* Keeps the blend mode inside this container */
-  padding: 1em;       /* Put padding and border on the main element */
+  isolation: isolate;
+  padding: 1em;       
   border: 2px lime solid;
-  color: rgb(94, 255, 0);       /* Ensures text is readable over the dark green */
+  color: rgb(94, 255, 0);      
 }
 
 .prgph p {
