@@ -254,7 +254,7 @@ form button p {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: #0000005d .5px;;
+  -webkit-text-stroke: #ffffff 05d .5px;
   padding: 0;
   line-height: 1;
 }

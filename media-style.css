@@ -13,7 +13,7 @@ body {
     display: grid;
     grid-template-columns: 50% 1fr;
     grid-gap: .5em;
-    grid-template-rows: auto auto auto 1fr auto ;
+    grid-template-rows: auto auto auto auto 1fr auto ;
     min-height: 100vh;
 }
 
@@ -120,12 +120,116 @@ nav ul li a:hover {
   
 }
 
-/*  GALLERY  */
+/* PRESS PAGE LINK */
+
+.press-release {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.press-release h2 {
+  margin: 1rem;
+  font-family: t26-carbon, monospace;
+  font-size: 1.4em;
+  font-weight: bold;
+  background: linear-gradient(#FF0033, #ff486d);
+  width: max-content;
+
+}
+
+.press-button {
+  grid-row: 3;
+  grid-column: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  height: 3rem;
+  width: max-content;
+  background: linear-gradient(to bottom, #CECECE 0%, #FFFFFF 39%, #5D7475 100%);
+  border: 2px outset rgb(158, 164, 164);
+}
+
+.press-button:hover {
+    background: linear-gradient(to bottom, #626161 0%, #b2b2b2 39%, #9cadae 100%);
+    border: 2px inset rgb(158, 164, 164);
+}
+
+.press-button a {
+  text-decoration: none;
+  line-height: 2;
+  padding: .2rem;
+
+  color: #9d4848;
+  font-family: t26-carbon, monospace;
+  font-size: 1.9em;
+  font-weight: bold;
+  background: linear-gradient(0deg, #8c1105, #84162f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: #0000005d .5px;;
+}
+
+.press-button a:hover {
+  background: linear-gradient(0deg, rgb(123, 6, 6), rgb(255, 72, 0),rgb(211, 37, 21));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: #000000b0 .3px;
+  filter: drop-shadow(.3px 0.3px .2px #3d3d3d) drop-shadow(.5px .5px .2px #6d4949de) drop-shadow(-0.1px -0.2px .2px #be9494) drop-shadow(-0.1px -0.2px .2px #ffffffb3);
+  transform-origin: center;
+}
+
+/* YT VIDEO */
 
 .yt-video {
-    grid-row: 3;
-    grid-column: 1;
+  grid-row: 3;
+  grid-column: 2;
+  position: relative; /* Keeps the h2 badge locked to this box */
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Prevents height collapse when scaling */
+
+  border: 2px #FF0033 solid;
+  color: rgba(255, 235, 235, 0.888);
+  text-shadow: 1px 1px 1px #ba0126;
+  overflow: hidden;
+}
+
+.yt-video h2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2; /* Ensures your title stays on top of the video */
+  margin: 0;
+  font-family: t26-carbon, monospace;
+  font-size: 1.4em;
+  font-weight: bold;
+  background: linear-gradient(#FF0033, #ff486d);
+  border-radius: 0px 0px 0px 10px;
+  padding: 0.2rem 0.3rem 0.3rem 0.3rem;
+  width: max-content;
+}
+
+.yt-video iframe {
+  width: 150%;   /* Renders the YouTube UI 1.5x wider */
+  height: 150%;  /* Renders the YouTube UI 1.5x taller */
+  border: 0;
+  transform: scale(0.6667); /* Shrinks it back to 100% (1 / 1.5 = 0.6667) */
+  transform-origin: 0 0;
+}
+
+/* PHOTO GALLERY */
+
+.img-gallery {
+    grid-row: 4 / 6;
+    grid-column: 1 / 4;
     height: fit-content;
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -137,23 +241,43 @@ nav ul li a:hover {
     overflow: hidden;
 }
 
-.yt-video h2 {
-    margin: 0.5rem;
-    font-family: t26-carbon, monospace;
-    font-size: 1.4em;
-    font-weight: bold;
-    background: linear-gradient(#FF0033, #ff486d);
-    border-radius: 0px 0px 10px 0px;
-    padding: 0.3rem;
-    padding-top: 0.2rem;
-    margin: 0;
-    width: max-content;
+.img-gallery ul {
+  width: fit-content;
+  display: flex;
+  margin: 0;
+  padding: 0;
 
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 }
 
-.yt-video iframe {
-    width: 100%;
-    min-width: 0;
+.img-gallery li {
+  list-style-type: none;
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  height: 100%;
+}
+
+.gallery-img {
+  width: 100%;
+  min-width: 0;
+}
+
+
+
+.img-gallery h2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; /* Ensures your title stays on top of the video */
+  margin: 0;
+  font-family: t26-carbon, monospace;
+  font-size: 1.4em;
+  font-weight: bold;
+  background: linear-gradient(#FF0033, #ff486d);
+  border-radius: 0px 0px 10px 0px;
+  padding: 0.2rem 0.3rem 0.3rem 0.3rem;
+  width: max-content;
 
 }
 
