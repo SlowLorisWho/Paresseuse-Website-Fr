@@ -1,30 +1,47 @@
-const player = new Tone.Player(
-  "https://tonejs.github.io/audio/berklee/gong_1.mp3"
+const gongPlayer = new Tone.Player(
+  "https://tonejs.github.io/audio/berklee/eating_chips_1.mp3"
 ).toDestination();
 
+const bubblePlayer = new Tone.Player(
+  "https://tonejs.github.io/audio/berklee/water_bubbles3.mp3"
+).toDestination();
+
+// Unlock audio context & play gong on page click
 document.addEventListener("click", async () => {
   await Tone.start();
-  if (player.loaded) {
-    player.start();
+  if (gongPlayer.loaded) {
+    gongPlayer.start();
   }
 });
 
+const fishtankBox = document.querySelector(".fishtank-div");
+const bubblesImage = document.getElementById("bubbles");
+const blueGlow = document.querySelector(".blue-glow"); // Matches your CSS class
 
+if (fishtankBox && bubblesImage && blueGlow) {
+  fishtankBox.addEventListener("mouseenter", () => {
+    bubblesImage.classList.add("visible");
+    bubblesImage.classList.remove("hidden");
 
-// const player2 = new Tone.Player(
-//   "https://tonejs.github.io/audio/berklee/alien_1.mp3"
-// ).toDestination();
+    blueGlow.classList.add("visible");
+    blueGlow.classList.remove("hidden");
 
+    if (
+      Tone.context.state === "running" &&
+      bubblePlayer.loaded &&
+      bubblePlayer.state !== "started"
+    ) {
+      bubblePlayer.start();
+    }
+  });
 
-// const hoverSound = document.querySelector(".maintitle");
+  fishtankBox.addEventListener("mouseleave", () => {
+    bubblesImage.classList.add("hidden");
+    bubblesImage.classList.remove("visible");
 
-// if (hoverSound) {
-//   hoverSound.addEventListener("mouseover", () => {
-//     if (Tone.context.state === "running" && player2.loaded) {
-//       player2.start();
-//     }
-//   });
-// }
+    blueGlow.classList.add("hidden");
+    blueGlow.classList.remove("visible");
 
-//glitch_1, glass break, guitar_hit_!
-
+    bubblePlayer.stop();
+  });
+}

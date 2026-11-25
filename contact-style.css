@@ -275,16 +275,54 @@ form button p:hover {
 
 
 
-
-
-
-#fishtank {
+.fishtank-div {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  place-items: center;
+  place-content: center;
   grid-column: 3;
   grid-row: 3;
   width: 100%;
   height: auto;
   border: 2px solid cyan;
+}
+
+
+#fishtank {
+  width: 100%;
+  height: auto;
   
+}
+
+.blue-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  width: 100%;
+  height: auto;
+  box-shadow: inset 0px 0px 20px #00f2ff;
+  top: 0;
+  left: 0;
+}
+
+#bubbles {
+  position:absolute;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  filter: drop-shadow(black 0px 0px 2px);
+  scale: 1.1;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 
